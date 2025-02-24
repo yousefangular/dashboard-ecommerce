@@ -1,0 +1,29 @@
+{ 
+  
+    "general":{
+        "title" : "title"
+    }, "list-products" : {
+            "productTitle":"list products"
+    },"home":{
+        
+            "oderdesc" : "Orders",
+            "selldesc" : "Sell Products",
+            "incomeTitle" : "Total Income",
+            "ChartTitle" : "Sales Profits",
+            "usersdesc" : "Users",
+            "commentssdesc" : "Comments",
+            "PopularProducts" : "Popular Products",
+            "visitors" : "Total 9k Visitors",
+            "productTitle" : "Products",
+            "paymentTitle" : "Price",
+            "statusTitle" : "Status"
+         },
+         "sidebar":
+                { "Dashboard":"Dashboard",
+                  "list-products":" List Products",
+                  "list-comment":"List comments",
+                  "list-user":"List Users",
+                  "list-order":"List Orders"         
+                }
+    
+}

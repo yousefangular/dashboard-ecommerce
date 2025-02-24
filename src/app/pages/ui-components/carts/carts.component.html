@@ -1,0 +1,34 @@
+<mat-card class="cardWithShadow">
+    <mat-card-content>
+      <mat-card-title>List All Users</mat-card-title>
+  
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">username</th>
+              <th scope="col">total</th>
+              <th scope="col">totalQuantity</th>
+              <th scope="col">totalProducts</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (cart of allData; track $index) {
+              <tr >
+
+                  <td><img class="imge" src="{{cart.image}}" alt="">
+                    <span>{{cart.username}}</span></td>
+                <td>{{cart.total}}$</td>
+                <td>{{cart.totalQuantity}}</td>
+                <td>{{cart.totalProducts}}</td>
+
+              </tr>
+            }
+
+          </tbody>
+          </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
+

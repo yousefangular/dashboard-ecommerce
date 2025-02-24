@@ -1,0 +1,93 @@
+<div class="blank-layout-container justify-content-center align-items-center bg-light">
+    <div class="position-relative row w-100 h-100 bg-gredient justify-content-center ">
+      <div class="col-lg-8 d-flex align-items-center">
+        <mat-card class="cardWithShadow boxed-auth "> 
+          <mat-card-content class="p-32">
+            <div class="text-center">
+              <a  class="register-title" >
+                <!-- <img src="./assets/images/logos/logo.svg" class="align-middle m-2" alt="logo" /> -->
+
+                registeration form
+              </a>
+            </div>
+   
+            <form class="m-t-30"  [formGroup]="registerForm">
+
+                 <!-- Username -->
+              <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Username</mat-label>
+              <mat-form-field  class="w-100 " color="primary">
+                <input matInput formControlName="name"/>
+                @if(registerForm.get('name')?.touched && registerForm.get('name')?.dirty){
+                  @if(registerForm.get('name')?.getError('required')){
+                      <mat-error> this field required </mat-error>
+                  }@else if(registerForm.get('name')?.getError('minlength')){
+                      <mat-error> at least 5 charcters </mat-error>
+                  }@else if(registerForm.get('name')?.getError('maxlength')){
+                    <mat-error> not more  8 charcters </mat-error>
+                }
+              }
+              </mat-form-field>
+             
+               
+                <!-- Email -->
+                <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Email</mat-label>
+                <mat-form-field class="w-100" color="primary">
+                  <input matInput formControlName="email"/>
+                  @if(registerForm.get('email')?.touched && registerForm.get('email')?.dirty){
+                    @if(registerForm.get('email')?.getError('required')){
+                        <mat-error> this field required </mat-error>
+                    }@else if(registerForm.get('email')?.getError('email')){
+                        <mat-error> Enter valid Email</mat-error>
+                    }
+                }
+                </mat-form-field>
+                <div class="row">
+                    <div class="col-6">
+                         <!-- password -->
+              <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Password</mat-label>
+              <mat-form-field  class="w-100" color="primary">
+                <input matInput type="password" formControlName="password">
+                @if(registerForm.get('password')?.touched && registerForm.get('password')?.dirty){
+                  @if(registerForm.get('password')?.getError('required')){
+                      <mat-error> this field required </mat-error>
+                  }@else if(registerForm.get('password')?.getError('minlength')){
+                      <mat-error> at least 5 charcters </mat-error>
+                  }@else if(registerForm.get('password')?.getError('maxlength')){
+                    <mat-error> not more  8 charcters </mat-error>
+                }
+              }
+              </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                         <!-- conifrm password -->
+             
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Confirm Password</mat-label>
+            <mat-form-field  class="w-100" color="primary">
+                <input matInput type="password" formControlName="repassword">
+                @if(registerForm.get('repassword')?.touched && registerForm.get('repassword')?.dirty){
+                  @if(registerForm.get('repassword')?.getError('required')){
+                      <mat-error> this field required </mat-error>
+                    }
+                  }
+                  
+            </mat-form-field>
+                    </div>
+                   </div>
+            
+              <a  mat-flat-button color="primary" class="w-100" [disabled]="registerForm.invalid" (click)="register()">
+               Register
+              </a>
+              <!-- input -->
+              <div class="d-flex align-items-center m-b-12">
+              
+                <a [routerLink]="['/login']" class="text-primary f-w-600 text-decoration-none m-l-auto f-s-14 my-3"> I have alerdy account
+                  ?</a>
+              </div>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "timer" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+  

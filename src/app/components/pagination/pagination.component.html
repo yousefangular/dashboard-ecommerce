@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-between">
+    <div class="d-flex align-items-center">
+      <div>
+        Showing {{ startIndex }}-{{ endIndex }} of {{ totalItemCount }} Entries
+      </div>
+      <select
+        name="paginationOption"
+        id="paginationOption"
+        [(ngModel)]="selectedItemsPerPage"
+        (ngModelChange)="onItemsPerPageChange($event)"
+      >
+        <option
+          *ngFor="let option of options"
+          [ngValue]="option.key"
+        >
+          {{ option.value }}
+        </option>
+      </select>
+      <div *ngIf="totalItemCount >= 10">Items / Page</div>
+    </div>
+    <pagination-controls
+      *ngIf="totalItemCount > selectedItemsPerPage"
+      (pageChange)="page = $event; onPageChange($event)"
+      previousLabel="Previous"
+      nextLabel="Next"
+      screenReaderPaginationLabel="Pagination"
+      screenReaderPageLabel="page"
+    ></pagination-controls>
+  </div>

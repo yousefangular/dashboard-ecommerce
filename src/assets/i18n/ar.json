@@ -1,0 +1,33 @@
+{
+    
+    "general":{
+        "title" : "العنوان"
+    },
+    
+    "list-products" : {
+           "productTitle":"قائمة المنتجات" 
+       },
+       "home":{
+          
+          "oderdesc" : "الطلبات",
+          "selldesc" : "المنتجات المباعة",
+          "incomeTitle" : "اجمالى الدخل",
+          "ChartTitle" : "ارباح المبيعات",
+          "usersdesc" : "مستخدم",
+          "commentssdesc" : "تعليق",
+          "PopularProducts" : "المنتجات الشائعة",
+          "visitors" : "الزائرين 9الالف",
+          "productTitle" : "المنتجات",
+          "paymentTitle" : "السعر",
+          "statusTitle" : "حالة المنتج"
+       } ,
+"sidebar":
+       {"Dashboard":"الصفحة الرئيسية",
+            "list-products":" المنجات",
+            "list-comment":" التعليقات",
+            "list-user":"المستخدمين",
+            "list-order":"الطلبات" 
+        
+       }
+       
+}

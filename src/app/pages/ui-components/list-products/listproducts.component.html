@@ -1,0 +1,142 @@
+
+
+<mat-card class="cardWithShadow">
+  <mat-card-content > 
+    <div class="title-section">
+      <mat-card-title>{{'list-products.productTitle' |translate}}</mat-card-title>
+
+     <div class="search-section">
+       <form >
+         <div class="row mt-3">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Search</mat-label>
+                    <input matInput (keyup)="search($event.target)" placeholder="title search">
+                </mat-form-field>
+              </div>
+          </div>
+       </form>
+     </div>
+    </div>
+    
+
+    <div class="table-responsive"> 
+      <table mat-table [dataSource]="products" class="w-100">
+        <!-- Position Column -->
+        <ng-container matColumnDef="products">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            class="f-w-600 mat-subtitle-1 f-s-14 p-l-0"
+          >
+            Product
+          </th>
+          <td mat-cell *matCellDef="let element" class="p-l-0">
+            <div class="d-flex align-items-center">
+              <img
+                [src]="element.images[0]"
+                alt="users"
+                width="60"
+                class="rounded"
+              />
+              <div class="m-l-16">
+                <h6 class="mat-subtitle-1 f-s-14 f-w-600">
+                  {{ element.title }}
+                </h6>
+              </div>
+            </div>
+          </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="payment">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            class="f-w-600 mat-subtitle-1 f-s-14"
+          >
+            Payment
+          </th>
+          <td mat-cell *matCellDef="let element" class="mat-body-1">
+        
+            <h6 class="mat-body-1 f-s-16 m-b-4">
+              <span class="text-dark f-w-600">Price: ${{ element.price }} </span>
+            </h6>
+           
+           
+            <h6 class="mat-body-1 f-s-16 m-b-4">
+              <span class="text-dark f-w-600">Discount: {{element.discountPercentage}} %</span>
+            </h6>
+           
+          </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="status">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            class="f-w-600 mat-subtitle-1 f-s-14"
+          >
+            Status
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <span class="bg-light-warning text-warning rounded f-w-600 p-6 p-y-4 f-s-12"> {{ element.availabilityStatus  }} </span>
+              
+          </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="actions">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            class="f-w-600 mat-subtitle-1 f-s-14">Actions</th>
+          <td mat-cell *matCellDef="let element" class="mat-body-1">
+            <button
+              mat-icon-button
+              [matMenuTriggerFor]="menu"
+              aria-label="Example icon-button with a menu" 
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="openDialog()">
+                <mat-icon>add</mat-icon>
+                
+                <span>Add</span>
+              </button>
+              <button mat-menu-item (click)="update(element)">
+                <mat-icon>edit</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item (click)="deleteProduct(element.id)">
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+              <button mat-menu-item routerLink="/ui-components/product-Detail/{{element.id}}">
+                mdi:eye
+                <span>view product</span>
+              </button>
+            </mat-menu>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns1  | paginate : { 
+          itemsPerPage: itemsPerPage,
+           currentPage: page ,
+           totalItems:totalItemCount}"></tr>
+      </table>
+<div class="">
+  <pagination-controls
+  (pageChange)="changePge($event)" 
+  [totalItems]="totalItemCount" 
+  [itemsPerPage]="itemsPerPage" 
+  [currentPage]="page">
+  ></pagination-controls>
+</div>
+
+    </div>
+  </mat-card-content>
+</mat-card>

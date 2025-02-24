@@ -1,0 +1,59 @@
+<!-- dailoge form  -->
+<h2 mat-dialog-title>Install Angular</h2>
+<mat-dialog-content class="mat-typography">
+  <mat-card class="cardWithShadow theme-card">
+    <mat-card-header>
+      <mat-card-title class="m-b-0">Form</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="b-t-1">
+      <form [formGroup]="productForm">
+        <div class="row">
+          <div class="col-lg-6">
+            <!-- input -->
+            <mat-label class="f-w-600 m-b-8 d-block">title</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input matInput placeholder="product title " formControlName="title"/>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-6">
+            <mat-label class="f-w-600 m-b-8 d-block">category</mat-label>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-select placeholder="your category">
+                <mat-option value="All">All</mat-option>
+                @for(option of category; track option) {
+                <mat-option [value]="option"  (click)="selectValue($event)">{{
+                  option
+                }}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-6">
+            <!-- input -->
+            <mat-label class="f-w-600 m-b-8 d-block">description</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input matInput type="email" placeholder="product description" formControlName="describtion"/>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-6">
+            <!-- input -->
+            <mat-label class="f-w-600 m-b-8 d-block">image</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input matInput type="text" placeholder="product image" formControlName="imageurl"/>
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <div class="m-t-12">
+          <mat-dialog-actions align="end">
+          <button mat-flat-button mat-button [mat-dialog-close]="true" cdkFocusInitial color="primary" class="m-r-8" (click)="submit()">Submit</button>
+          <button mat-flat-button mat-button (click)="update()">Update</button>
+          <button mat-stroked-button mat-button mat-dialog-close color="warn">Cancel</button>
+          </mat-dialog-actions>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+
+<!-- dailoge form  -->
