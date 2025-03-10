@@ -28,9 +28,4 @@ export const navItems: NavItem[] = [
     iconName: 'solar:cart-bold-duotone',
     route: '/ui-components/list-carts',
   },
-  {
-    displayName: 'Login',
-    iconName: 'solar:login-3-line-duotone',
-    route: '/authentication/login',
-  }
 ];

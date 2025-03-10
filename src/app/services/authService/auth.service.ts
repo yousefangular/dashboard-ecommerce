@@ -18,4 +18,8 @@ export class AuthService {
   login(model:Login):Observable<Login>{
     return this.http.post<Login>(`${this.baseUrl}auth` , model)
   }
+
+  logout():Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}logout`,{})
+  }
 }
