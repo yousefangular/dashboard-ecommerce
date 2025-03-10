@@ -30,7 +30,7 @@ import { MaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {TranslateCompiler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { AuthInterceptor } from './auth.interceptor';
+// import { AuthInterceptor } from './auth.interceptor';
 import { TranslatSharedModule } from './translat-shared.module';
 import { provideToastr } from 'ngx-toastr';
 
@@ -61,7 +61,7 @@ import { provideToastr } from 'ngx-toastr';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
       routes,

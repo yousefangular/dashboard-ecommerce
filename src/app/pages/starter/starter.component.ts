@@ -108,7 +108,7 @@ getComments(){
 getCarts(){
  this.userService.getAllCarts().subscribe((res:any)=>{
   this.carts = res.carts
-  console.log(this.carts);
+  // console.log(this.carts);
   this.cartQuantity = this.carts.length
   this.getSellProducts()
   this.totalProductsIncome()
@@ -129,7 +129,7 @@ totalProductsIncome(){
   const totalIncome = this.carts.map(item => item.total) .reduce((a, b) => a + b, 0)
 
   this.TotalIcome = totalIncome
-  console.log(this.TotalIcome);
+  // console.log(this.TotalIcome);
   
 }
 

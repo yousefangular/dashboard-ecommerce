@@ -11,21 +11,21 @@ export const navItems: NavItem[] = [
   {
     displayName: 'list-products',
     iconName: 'solar:file-text-line-duotone',
-    route: '/ui-components/list-products',
+    route: '/dashboard/ui-components/list-products',
   },
   {
     displayName: 'list-comments',
     iconName: 'ic:twotone-comment',
-    route: '/ui-components/list-comments',
+    route: '/dashboard/ui-components/list-comments',
   },
   {
     displayName: 'list-users',
     iconName: 'mdi:user-tie',
-    route: '/ui-components/list-users',
+    route: '/dashboard/ui-components/list-users',
   },
   {
     displayName: 'list-carts',
     iconName: 'solar:cart-bold-duotone',
-    route: '/ui-components/list-carts',
+    route: '/dashboard/ui-components/list-carts',
   },
 ];

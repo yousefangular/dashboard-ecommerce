@@ -22,7 +22,7 @@ export const routes: Routes = [
           import('./pages/pages.routes').then((m) => m.PagesRoutes),
         canActivate:[loginGuard]
       },
-      {
+      { 
         path: 'ui-components',
         loadChildren: () =>
           import('./pages/ui-components/ui-components.routes').then(

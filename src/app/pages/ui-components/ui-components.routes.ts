@@ -20,7 +20,7 @@ export const UiComponentsRoutes: Routes = [
       { 
         path: 'list-products',
         component: AppTablesComponent,
-      },
+      }, 
       {
         path: 'list-users',
         component: UsersComponent,
