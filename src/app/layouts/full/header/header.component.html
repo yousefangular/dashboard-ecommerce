@@ -1,4 +1,5 @@
-<mat-toolbar class="topbar">
+<mat-toolbar class="topbar ">
+
   <!-- Mobile Menu -->
   @if(!showToggle) {
   <button
@@ -16,7 +17,7 @@
   <!-- --------------------------------------------------------------- -->
   <!-- Notification Dropdown -->
   <!-- --------------------------------------------------------------- -->
-  <button
+  <!-- <button
     mat-mini-fab
     color="inherit"
     aria-label="Notifications"
@@ -25,16 +26,18 @@
     <span  matBadge="1" matBadgeOverlap="false" matBadgeSize="small">
       <i class="iconify icon-20 d-flex" data-icon="solar:bell-line-duotone"></i>
     </span>
-  </button>
+  </button> -->
 
+
+<div class="container d-flex align-items-center">
+  <div>
+    <button (click)="changeLang('en')" class="btn btn-primary">En</button>
+    <button (click)="changeLang('ar')" class="btn btn-success mx-2">عربى</button>
+  </div>
   <span class="flex-1-auto"></span>
 
  <!-- ------------------------------------chang land--------------------------- -->
 
- <div>
-  <button (click)="changeLang('en')" class="btn btn-primary">En</button>
-  <button (click)="changeLang('ar')" class="btn btn-success mx-2">عربى</button>
-</div>
 
 <div>
   <button class="btn btn-warning" (click)="logout()">Logout</button>
@@ -95,4 +98,6 @@
       >
     </div>
   </mat-menu>
+</div>
+  
 </mat-toolbar>

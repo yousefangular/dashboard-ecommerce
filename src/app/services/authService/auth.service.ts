@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Login, Register } from 'src/app/interfaces/auth';
 
 @Injectable({
@@ -8,6 +8,8 @@ import { Login, Register } from 'src/app/interfaces/auth';
 })
 export class AuthService {
  private baseUrl :string = "https://e-commerce-serverside.vercel.app/api/users/"
+
+ username :BehaviorSubject<string> = new BehaviorSubject<string>('')
 
   constructor(private http:HttpClient) { }
 

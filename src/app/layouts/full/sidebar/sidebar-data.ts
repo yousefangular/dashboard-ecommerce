@@ -28,4 +28,5 @@ export const navItems: NavItem[] = [
     iconName: 'solar:cart-bold-duotone',
     route: '/dashboard/ui-components/list-carts',
   },
+ 
 ];

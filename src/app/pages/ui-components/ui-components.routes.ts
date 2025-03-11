@@ -33,7 +33,7 @@ export const UiComponentsRoutes: Routes = [
         path: 'list-carts',
         component: CartsComponent,
       },
-      {
+      { 
         path:'product-Detail/:id',
         component:ProductDetailsComponent
       }

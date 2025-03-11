@@ -19,11 +19,11 @@ product!:any
 
 
 constructor(private activatedRout:ActivatedRoute,private productService:ProductService){
-  this.id = this.activatedRout.snapshot.paramMap.get('id');
-  this.getProduct()
 }
 
 ngOnInit(): void {
+  this.id = this.activatedRout.snapshot.paramMap.get('id');
+  this.getProduct()
 }
 
 getProduct(){
